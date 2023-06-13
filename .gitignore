@@ -1,5 +1,6 @@
 # Ignore all node_modules
 node_modules/*
+.idea/*
 
 dist/
 
@@ -11,6 +12,7 @@ npm-debug.log
 
 # OSX
 .DS_Store
+
 
 # Vim stuff
 *.swp
