@@ -1,4 +1,4 @@
-## Tier 1: All Useres and Tasks (26/59)
+## Tier 1: All Users and Tasks (26/59)
 
 <details>
 
@@ -12,25 +12,25 @@
 - [ ] Write a users sub-reducer to manage users in your Redux store
 - [ ] Display the all-users component when the url matches `/users`
 
-  </details>
+</details>
 
 #### Tasks
 
   <details>
 
 - [ ] Write a component to display a list of all tasks (at least their names)
-- [ ] Write a tasks sub-reducer to manage tasks in your Redux store
+- [ ] Write a tasks sub-reducer (slice) to manage tasks in your Redux store
 - [ ] Display the all-tasks component when the url matches `/tasks`
 
-  </details>
+</details>
 
 #### Navbar
 
   <details>
 
-- [ ] Add a links to the navbar that can be used to navigate to the all-users view and the all-tasks view
+- [ ] Add links in the navbar that can be used to navigate to the all-users view and the all-tasks view
 
-  </details>
+</details>
 
 ### Backend
 
@@ -38,41 +38,42 @@
 
   <details>
 
-- [ ] Write a function which sync's and seeds your database when your application starts
+- [ ] Write a function which syncs and seeds your database when your application starts. Make sure to create some tasks that are associated with users!
 
-  </details>
+</details>
 
 #### User
 
   <details>
-  
-  - [ ] Write a route to serve up all users
+
+- [ ] Write a route to serve up all users
 
 - Write a `users` model with the following information:
-  - [ ] name - not empty or null
+
+  - [ ] firstName - not empty or null
+  - [ ] lastName - not empty or null
   - [ ] imageUrl - with a default value
-  - [ ] address - not empty or null
-  - [ ] description - extremely large text
+  - [ ] email - not empty or null; must be a valid email
+  - [ ] bio - extremely large text
 
   </details>
 
 #### Tasks
 
   <details>
-  
-  - [ ] Write a route to serve up all tasks
+
+- [ ] Write a route to serve up all tasks
 
 - Write a `tasks` model with the following information:
 
-  - [ ] firstName - not empty or null
-  - [ ] lastName - not empty or null
-  - [ ] email - not empty or null; must be a valid email
-  - [ ] imageUrl - with a default value
-  - [ ] gpa - decimal between 0.0 and 4.0
+  - [ ] description - not empty or null
+  - [ ] category - not empty or null
+  - [ ] difficulty - integer between 1 and 5
+  - [ ] complete - boolean; false by default
 
-- [ ] Tasks may be associated with at most one user. Likewise, users may be associated with many tasks
+- [ ] Tasks may be associated with at most one user. Users may be associated with many tasks
 
-  </details>
+</details>
 
 </details>
 
@@ -83,32 +84,32 @@
 ### Frontend
 
 <details>
-  
+
 #### Single User
-  
+
   <details>
-  
-  - Write a component to display a single user with the following information:
-    - [ ] The user's name, image, address and description
-    - [ ] A list of the names of all tasks in that user (or a helpful message if it doesn't have any tasks)
-  - [ ] Display the appropriate user's info when the url matches `/users/:userId`
-  - [ ] Clicking on a user from the users view should navigate to show that user
+
+- Write a component to display a single user with the following information:
+  - [ ] The user's first and last name, image, email address, and bio
+  - [ ] A list of the descriptions of all tasks in that user (or a helpful message if it doesn't have any tasks)
+- [ ] Display the appropriate user's info when the url matches `/users/:userId`
+- [ ] Clicking on a user from the users view should navigate to show that user
 
 - [ ] Clicking on the name of a task in the user view should navigate to show that task in the task view
 
-  </details>
+</details>
 
 #### Single Tasks
 
 <details>
-  
-  - Write a component to display a single task with the following information:
-    - [ ] The task's full name, email, image, and gpa
-    - [ ] The name of their user (or a helpful message if they don't have one)
-  - [ ] Display the appropriate task when the url matches `/tasks/:taskId`
-  - [ ] Clicking on a task from the tasks view should navigate to show that task
 
-- [ ] Clicking on the name of a user in the task view should navigate to show that user in the user view
+- Write a component to display a single task with the following information:
+  - [ ] The task's description, category, difficulty, and status (complete/not complete)
+  - [ ] The name of the associated user (or a helpful message if it doesn't have one)
+- [ ] Display the appropriate task when the url matches `/tasks/:taskId`
+- [ ] Clicking on a task from the tasks view should navigate to show that task
+
+- [ ] Clicking on the name of the assigned user in the task view should navigate to show that user in the user view
 
 </details>
 
@@ -117,27 +118,27 @@
 ### Backend
 
 <details>
-  
+
 #### User
 
 <details>
-  
-   - [ ] Write a route to serve up a single task (based on their id), _including that task's user_
-  
+
+- [ ] Write a route to serve up a single task (based on its id), _including that task's assigned user_
+
 </details>
 
 #### Tasks
-  
+
 <details>
-  
-   - [ ] Write a route to serve up a single user (based on its id), _including that users' tasks_
-  
+
+- [ ] Write a route to serve up a single user (based on their id), _including that user's tasks_
+
 </details>
 
 </details>
-  
+
 </details>
-  
+
 </details>
 
 ## Tier 3: Adding a User and Adding a Task (8/59)
@@ -149,116 +150,115 @@
 <details>
 
 #### User
-  
+
   <details>
-    
-- [ ] Write a component to display a form for adding a new user that contains inputs for _at least_ the name and address.
+
+- [ ] Write a component to display a form for adding a new user that contains inputs for _at least_ the name and email address.
 - [ ] Display this component as part of the users view, alongside the list of users
-    
+
 - Submitting the form with a valid name/address should:
-  - [ ] Make an AJAX request that causes the new user to be persisted in the database
+
+  - [ ] Make an AJAX request using Axios that causes the new user to be persisted in the database
   - [ ] Add the new user to the list of users without needing to refresh the page
 
   </details>
-  
-#### Task
-  
-  <details>
-    
- - [ ] Write a component to display a form for adding a new task that contains inputs for _at least_ first name, last name and email
- - [ ] Display this component as part of the tasks view, alongside the list of tasks
 
- - Submitting the form with a valid first name/last name/email should:
-   - [ ] Make an AJAX request that causes the new task to be persisted in the database
-   - [ ] Add the new task to the list of tasks without needing to refresh the page
-  
+#### Task
+
+  <details>
+
+- [ ] Write a component to display a form for adding a new task that contains inputs for the description, category, and difficulty
+- [ ] Display this component as part of the tasks view, alongside the list of tasks
+
+- Submitting the form with a valid description, category, and difficulty should:
+
+  - [ ] Make an AJAX request using Axios that causes the new task to be persisted in the database
+  - [ ] Add the new task to the list of tasks without needing to refresh the page
+
   </details>
 
 </details>
-  
+
 ### Backend
-  
+
 <details>
-  
+
 #### User
-  
+
   <details>
-  
-  - [ ] Write a route to add a new user
-    
-  </details>
-  
-#### Task
-  
-  <details>
-    
-  - [ ] Write a route to add a new task
-    
-  </details>
-  
- 
+
+- [ ] Write a route to add a new user
+
 </details>
-  
+
+#### Task
+
+  <details>
+
+- [ ] Write a route to add a new task
+
+</details>
+
+</details>
+
 </details>
 
 ## Tier 4: Removing a User and Removing a Task (6/59)
 
 <details>
-  
+
 ### Frontend
 
 <details>
 
- #### User
-  
-  <details>
-    
-  - [ ] In the users view, include an `X` button next to each user
-  - Clicking the `X` button should:
+#### User
 
-    - [ ] Make an AJAX request that causes that user to be removed from database
-    - [ ] Remove the user from the list of users without needing to refresh the page
-    
-  </details>
-  
- #### Task
-  
   <details>
-    
-  - [ ] In the tasks view, include an `X` button next to each task
-  - Clicking the `X` button should:
-  
-    - [ ] Make an AJAX request that causes that task to be removed from database
-    - [ ] Remove the task from the list of tasks without needing to refresh the page
 
-  
+- [ ] In the users view, include an `X` button next to each user
+- Clicking the `X` button should:
+
+  - [ ] Make an AJAX request that causes that user to be removed from database
+  - [ ] Remove the user from the list of users without needing to refresh the page
+
   </details>
 
+#### Task
+
+  <details>
+
+- [ ] In the tasks view, include an `X` button next to each task
+- Clicking the `X` button should:
+
+  - [ ] Make an AJAX request that causes that task to be removed from database
+  - [ ] Remove the task from the list of tasks without needing to refresh the page
+
+  </details>
 
 </details>
-  
+
 ### Backend
 
 <details>
-  
-  #### User
-  
+
+#### User
+
   <details>
-    
-  - [ ] Write a route to remove a user (based on its id)
-    
-  </details>
-  
-  #### Task
-  
-  <details>
-    
-  - [ ] Write a route to remove a task (based on their id)
-    
-  </details>
-  
+
+- [ ] Write a route to remove a user (based on their id)
+
 </details>
-  
+
+#### Task
+
+  <details>
+
+- [ ] Write a route to remove a task (based on its id)
+
+</details>
+
+</details>
+
 </details>
 
 ## Tier 5: Updating a User and Updating a Task (9/59)
@@ -270,54 +270,55 @@
 <details>
 
 #### User
-  
+
   <details>
-  
-  - [ ] Write a component to display a form updating _at least_ a user's name and address
-  - [ ] Display this component as part of the user view
-    - Submitting the form with valid data should:
-  - [ ] Make an AJAX request that causes that user to be updated in the database
-  - [ ] Update the user in the current view without needing to refresh the page
-    - [ ] In the user view, display an `Unregister` button next to each of its tasks, which removes the task from the user (in the database as           well as this view); hint: the task is still in the database but is no longer associated with the user
-    
+
+- [ ] Write a component to display a form updating _at least_ a user's first name, last name, and email address
+- [ ] Display this component as part of the user view
+  - Submitting the form with valid data should:
+- [ ] Make an AJAX request that causes that user to be updated in the database
+- [ ] Update the user in the current view without needing to refresh the page
+
+  - [ ] In the user view, display an `Unassign` button next to each of its tasks, which removes the task from the user (in the database as well as this view); hint: the task is still in the database but is no longer associated with the user
+
   </details>
 
 #### Task
-  
+
   <details>
-    
-  - [ ] Write a component to display a form updating a task
-  - [ ] Display this component as part of the task view
-   - Submitting the form with valid data should:
-  - [ ] Make an AJAX request that causes that task to be updated in the database
-  - [ ] Update the task in the current view without needing to refresh the page
-    
-  </details>
+
+- [ ] Write a component to display a form updating a task's description, category, and difficulty
+- [ ] Display this component as part of the task view
+- Submitting the form with valid data should:
+- [ ] Make an AJAX request that causes that task to be updated in the database
+- [ ] Update the task in the current view without needing to refresh the page
+
+</details>
 
 </details>
 
 ### Backend
 
 <details>
-  
+
 #### User
-  
+
 <details>
-  
+
 - [ ] Write a route to update an existing user
-  
+
 </details>
 
 #### Task
-  
+
 <details>
-  
+
 - [ ] Write a route to update an existing task
-  
-</details>  
-  
+
 </details>
-  
+
+</details>
+
 </details>
 
 ## Bonus Tier: Finishing Touches (15 EC)
@@ -340,8 +341,8 @@
 
 <details>
 
-- [ ] Create option for tasks to be ordered based on lastName on all-tasks view
-- [ ] Create option for tasks to be ordered based on GPA on all-tasks view
+- [ ] Create option for tasks to be ordered based on the assigned user's lastName in all-tasks view
+- [ ] Create option for tasks to be ordered based on difficulty on all-tasks view
 - [ ] Create option for users to be ordered based on number of assigned tasks on all-users view
 
 </details>
@@ -366,7 +367,7 @@
 - [ ] Implement _back-end_ pagination for users (e.g. `/api/users?page=1` returns the first ten users' data, and `/api/users?page=2` returns users 11-20)
 
 </details>
-  
+
 </details>
 
 - `RUBRIC.md` - contains the grading rubric for additional factors, as well as the formula for calculating the total score
