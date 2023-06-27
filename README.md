@@ -55,7 +55,7 @@ You can determine views and functionality from the requirements and wireframes s
 
 #### Tasks
 
-- [ ] Write a component to display a list of all tasks (at least their names)
+- [ ] Write a component to display a list of all tasks (at least their titles)
 - [ ] Write a tasks sub-reducer (slice) to manage tasks in your Redux store
 - [ ] Display the all-tasks component when the url matches `/tasks`
 
@@ -87,7 +87,8 @@ You can determine views and functionality from the requirements and wireframes s
 
 - Write a `tasks` model with the following information:
 
-  - [ ] description - not empty or null
+  - [ ] title - not empty or null
+  - [ ] description - extremely large text
   - [ ] category - not empty or null
   - [ ] difficulty - integer between 1 and 5
   - [ ] complete - boolean; false by default
@@ -208,7 +209,7 @@ You can determine views and functionality from the requirements and wireframes s
 
 #### Task
 
-- [ ] Write a component to display a form updating a task's description, category, and difficulty
+- [ ] Write a component to display a form updating a task's title, description, category, and difficulty
 - [ ] Display this component as part of the task view
 - Submitting the form with valid data should:
 - [ ] Make an AJAX request that causes that task to be updated in the database
