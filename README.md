@@ -28,12 +28,12 @@ For this project, you must use Express to handle HTTP requests and Sequelize to 
 
 ## Requirements
 
-- the application should be deployed
 - the application needs to load without errors (blank screens are not acceptable)
-- do not copy and paste previous code!
+- you may use previous projects and solution code, but please DO NOT COPY AND PASTE from other projects, including your own
 - you will have ample time to complete project, NO EXTENSIONS WILL BE GIVEN
-- build incrementally!
+- build incrementally, and test your progress as you go!
 - if you have an error, fix the error, before attempting to add functionality
+- if you have time at the end, we ask that you record a short (5 min) walkthrough of all the functionality you've built. This is to help us with grading your project and give you practice with recording demos before you're doing it for real in Senior Phase
 
 ### Views and Functionality
 
@@ -255,6 +255,9 @@ You can determine views and functionality from the requirements and wireframes s
 - [ ] Implement _back-end_ pagination for users (e.g. `/api/users?page=1` returns the first ten users' data, and `/api/users?page=2` returns users 11-20)
 
 - `RUBRIC.md` - contains the grading rubric for additional factors, as well as the formula for calculating the total score
+
+#### Deploy Your Application
+- [ ] Deploy your application using Render.com (search Slack for "deployment guide" to more information)
 
 ## Evaluation
 
