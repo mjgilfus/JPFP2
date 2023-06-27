@@ -15,7 +15,7 @@ You are the CTO of a company which manages Users and Tasks. Create a RESTful web
 
 ### The tools
 
-For this project, you must use Express to handle HTTP requests and Sequelize to interface with your database. Likewise, you must use React, Redux and React-Redux on the front-end. This means that all important state (i.e. students and users) must be managed by the Redux store (unimportant state, like form data, may be managed by stateful React components). Components that display student/campus data should therefore be connected to the Redux store.
+For this project, you must use Express to handle HTTP requests and Sequelize to interface with your database. Likewise, you must use React, Redux and React-Redux on the front-end. This means that all important state (i.e. users and tasks) must be managed by the Redux store. Unimportant state, like form data, may be managed by stateful React components. Components that display user/task data should therefore be connected to the Redux store.
 
 - other client side libraries you will need
 - redux
@@ -28,16 +28,16 @@ For this project, you must use Express to handle HTTP requests and Sequelize to 
 
 ## Requirements
 
-- the application needs to be deployed
+- the application should be deployed
 - the application needs to load without errors (blank screens are not acceptable)
 - do not copy and paste previous code!
 - you will have ample time to complete project, NO EXTENSIONS WILL BE GIVEN
 - build incrementally!
-- if you have an error, fix the error, before attempting to **add** functionality
+- if you have an error, fix the error, before attempting to add functionality
 
 ### Views and Functionality
 
-You can determine views and functionality from the requirements and wireframes shown below.
+You can determine views and functionality from the requirements and wireframes shown below. If you need any clarification, please feel free to ask!
 
 <img src='./wireframes.png' />
 
